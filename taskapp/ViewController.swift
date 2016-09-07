@@ -11,15 +11,17 @@ import RealmSwift
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    
+    @IBOutlet weak var search: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     
     // Realmインスタンスを取得する
-    let realm = try! Realm()  // ←追加
+    let realm = try! Realm()
     
     // DB内のタスクが格納されるリスト。
     // 日付近い順\順でソート：降順
     // 以降内容をアップデートするとリスト内は自動的に更新される。
-    let taskArray = try! Realm().objects(Task).sorted("date", ascending: false)   // ←追加
+    let taskArray = try! Realm().objects(Task).sorted("date", ascending: false)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,7 +42,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     // MARK: UITableViewDataSourceプロトコルのメソッド
     // データの数（＝セルの数）を返すメソッド
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return taskArray.count  // ←追加する
+        return taskArray.count
+    
     }
     
     // 各セルの内容を返すメソッド
@@ -48,7 +51,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         // 再利用可能な cell を得る
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
         
-        // Cellに値を設定する.
+        // Cellに値を設定する
         let task = taskArray[indexPath.row]
         cell.textLabel?.text = task.title
         
@@ -58,7 +61,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let dateString:String = formatter.stringFromDate(task.date)
         cell.detailTextLabel?.text = dateString
         
+        let search2 = search
+        
         return cell
+        
+        // 検索結果に一致するセルだけを表示
+        
     }
     
     // MARK: UITableViewDelegateプロトコルのメソッド
