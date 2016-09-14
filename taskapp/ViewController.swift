@@ -9,7 +9,7 @@
 import UIKit
 import RealmSwift
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
 
     
     @IBOutlet weak var search: UISearchBar!
@@ -21,13 +21,30 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     // DB内のタスクが格納されるリスト。
     // 日付近い順\順でソート：降順
     // 以降内容をアップデートするとリスト内は自動的に更新される。
-    let taskArray = try! Realm().objects(Task).sorted("date", ascending: false)
+    var taskArray = try! Realm().objects(Task).sorted("date", ascending: false)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        // デリゲート先を自分に設定する。
+        search.delegate = self
+        
+        // 何も入力されていなくてもReturnキーを押せるようにする。
+        search.enablesReturnKeyAutomatically = false
+        
     }
-
+    
+    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+        // 検索結果に一致するセルの指定
+        if search.text == "" {
+            taskArray = try! Realm().objects(Task).sorted("date", ascending: false)
+        } else {
+            taskArray = try! Realm().objects(Task).filter("category == %@", search.text!)
+        }
+        tableView.reloadData()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -41,9 +58,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     // MARK: UITableViewDataSourceプロトコルのメソッド
     // データの数（＝セルの数）を返すメソッド
+    
+    // 検索結果に一致するセルだけ表示
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return taskArray.count
-    
+        
     }
     
     // 各セルの内容を返すメソッド
@@ -61,11 +80,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let dateString:String = formatter.stringFromDate(task.date)
         cell.detailTextLabel?.text = dateString
         
-        let search2 = search
-        
         return cell
-        
-        // 検索結果に一致するセルだけを表示
         
     }
     

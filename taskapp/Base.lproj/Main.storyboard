@@ -113,14 +113,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="タイトル" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oQ6-xn-bGU">
-                                <rect key="frame" x="20" y="74" width="560" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="タイトル" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oQ6-xn-bGU">
+                                <rect key="frame" x="20" y="74" width="68" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2ic-Bl-Qtw">
-                                <rect key="frame" x="20" y="105" width="560" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2ic-Bl-Qtw">
+                                <rect key="frame" x="20" y="105" width="270" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -151,46 +151,33 @@
                                     <!--2016-09-05 07:03:53 +0000-->
                                 </date>
                             </datePicker>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="カテゴリー" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zBl-U6-uUh">
-                                <rect key="frame" x="20" y="436" width="560" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="カテゴリー" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zBl-U6-uUh">
+                                <rect key="frame" x="300" y="74" width="85" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kW6-R5-MbU">
-                                <rect key="frame" x="20" y="467" width="560" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kW6-R5-MbU">
+                                <rect key="frame" x="300" y="105" width="270" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="2ic-Bl-Qtw" firstAttribute="leading" secondItem="4JW-5K-IY8" secondAttribute="leadingMargin" id="2KT-3T-9EU"/>
                             <constraint firstItem="ySM-cs-IjP" firstAttribute="leading" secondItem="4JW-5K-IY8" secondAttribute="leadingMargin" id="665-A1-2z9"/>
                             <constraint firstItem="nVx-ou-53Z" firstAttribute="leading" secondItem="4JW-5K-IY8" secondAttribute="leadingMargin" id="6HY-j9-SLR"/>
-                            <constraint firstItem="oQ6-xn-bGU" firstAttribute="leading" secondItem="4JW-5K-IY8" secondAttribute="leadingMargin" id="8wv-5i-hnz"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="zBl-U6-uUh" secondAttribute="trailing" id="FYM-6J-4bR"/>
-                            <constraint firstItem="zBl-U6-uUh" firstAttribute="leading" secondItem="4JW-5K-IY8" secondAttribute="leadingMargin" id="HJF-Zo-xll"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="kW6-R5-MbU" secondAttribute="trailing" id="KTV-jv-OJC"/>
-                            <constraint firstItem="3d6-wE-Und" firstAttribute="top" secondItem="2ic-Bl-Qtw" secondAttribute="bottom" constant="10" id="OHS-o0-nNk"/>
-                            <constraint firstItem="kW6-R5-MbU" firstAttribute="top" secondItem="zBl-U6-uUh" secondAttribute="bottom" constant="10" id="P2a-i2-ufR"/>
                             <constraint firstItem="nVx-ou-53Z" firstAttribute="top" secondItem="ySM-cs-IjP" secondAttribute="bottom" constant="10" id="UQj-8L-iyt"/>
                             <constraint firstItem="3d6-wE-Und" firstAttribute="leading" secondItem="4JW-5K-IY8" secondAttribute="leadingMargin" id="VpP-aZ-je4"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ySM-cs-IjP" secondAttribute="trailing" id="Xdb-BY-ghd"/>
-                            <constraint firstItem="2ic-Bl-Qtw" firstAttribute="top" secondItem="oQ6-xn-bGU" secondAttribute="bottom" constant="10" id="bL3-dc-TLO"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="2ic-Bl-Qtw" secondAttribute="trailing" id="e54-4T-uEf"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="oQ6-xn-bGU" secondAttribute="trailing" id="mkK-HL-r2N"/>
-                            <constraint firstItem="zBl-U6-uUh" firstAttribute="top" secondItem="nVx-ou-53Z" secondAttribute="bottom" constant="10" id="pBL-IH-N9h"/>
-                            <constraint firstItem="kW6-R5-MbU" firstAttribute="leading" secondItem="4JW-5K-IY8" secondAttribute="leadingMargin" id="qju-6m-OVm"/>
+                            <constraint firstItem="2rO-aT-dfi" firstAttribute="top" secondItem="nVx-ou-53Z" secondAttribute="bottom" constant="174" id="bzL-s8-7Ck"/>
                             <constraint firstAttribute="trailingMargin" secondItem="3d6-wE-Und" secondAttribute="trailing" id="qxd-HN-oCk"/>
-                            <constraint firstItem="oQ6-xn-bGU" firstAttribute="top" secondItem="Uv8-Zm-cek" secondAttribute="bottom" constant="10" id="rAC-YH-PKJ"/>
                             <constraint firstItem="ySM-cs-IjP" firstAttribute="top" secondItem="3d6-wE-Und" secondAttribute="bottom" constant="10" id="upU-Cj-kzx"/>
                             <constraint firstAttribute="trailingMargin" secondItem="nVx-ou-53Z" secondAttribute="trailing" id="zE9-3h-sjw"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="categoryTextField" destination="kW6-R5-MbU" id="4Gw-n5-Tfw"/>
-                        <outlet property="categoryoutlet" destination="kW6-R5-MbU" id="Uhn-zo-9Ws"/>
                         <outlet property="contentsTextView" destination="ySM-cs-IjP" id="gqL-rZ-pm1"/>
                         <outlet property="datePicker" destination="nVx-ou-53Z" id="eAU-dS-rmC"/>
                         <outlet property="titleTextField" destination="2ic-Bl-Qtw" id="QRM-5r-5GA"/>
