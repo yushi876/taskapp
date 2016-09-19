@@ -43,6 +43,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             taskArray = try! Realm().objects(Task).filter("category == %@", search.text!)
         }
         tableView.reloadData()
+        view.endEditing(true)
     }
     
     override func didReceiveMemoryWarning() {
@@ -77,8 +78,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let formatter = NSDateFormatter()
         formatter.dateFormat = "yyyy-MM-dd HH:mm"
         
+        let category = task.category
         let dateString:String = formatter.stringFromDate(task.date)
-        cell.detailTextLabel?.text = dateString
+        cell.detailTextLabel?.text = "日付：\(dateString) カテゴリー：\(category)"
+        
+        
         
         return cell
         
